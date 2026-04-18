@@ -44,10 +44,10 @@ export default function Navbar() {
 
           {/* ── Desktop Buttons ── */}
           <div className='hidden md:flex items-center gap-3'>
-            <button onClick={() => navigate('/auth')} className='px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors duration-200'>
+            <button onClick={() => navigate('/auth')} className='px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:pointer-cursor transition-colors duration-200'>
               Sign In
             </button>
-            <button onClick={() => navigate('/auth')} className='px-6 py-2 text-sm font-medium text-white bg-amber-600 hover:bg-amber-700 rounded-lg transition-colors duration-200'>
+            <button onClick={() => navigate('/auth')} className='px-6 py-2 text-sm font-medium text-white bg-amber-600 hover:bg-amber-700 rounded-lg transition-colors duration-200 hover:pointer-cursor'>
               Sign Up
             </button>
           </div>
@@ -57,7 +57,7 @@ export default function Navbar() {
             type="button"
             onClick={() => setOpen(p => !p)}
             aria-label="Toggle navigation"
-            className='md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors duration-200'
+            className='md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors duration-200 hover:pointer-cursor relative'
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               {open ? (
@@ -81,14 +81,14 @@ export default function Navbar() {
           <div className='md:hidden mt-4 pb-4 border-t border-gray-200 pt-4 bg-white rounded-lg shadow-lg px-3'>
             <nav className='flex flex-col gap-4'>
               {links.map(l => (
-                <a key={l.href} href={l.href} className='text-base font-medium text-gray-700 hover:text-amber-600 transition-colors duration-200 py-2' onClick={() => setOpen(false)}>{l.label}</a>
+                <a key={l.href} href={l.href} className='text-base font-medium text-gray-700 hover:text-amber-600 hover:pointer-cursor transition-colors duration-200 py-2' onClick={() => setOpen(false)}>{l.label}</a>
               ))}
             </nav>
             <div className='flex flex-col gap-3 mt-6 pt-4 border-t border-gray-200'>
-              <button onClick={() => { navigate('/auth'); setOpen(false); }} className='w-full py-3 text-base font-medium text-gray-700 hover:text-gray-900 transition-colors duration-200 text-center'>
+              <button onClick={() => { navigate('/auth'); setOpen(false); }} className='w-full py-3 text-base font-medium text-gray-700 hover:text-gray-900 hover:pointer-cursor transition-colors duration-200 text-center'>
                 Sign In
               </button>
-              <button onClick={() => { navigate('/auth'); setOpen(false); }} className='w-full py-3 text-base font-medium text-white bg-amber-600 hover:bg-amber-700 rounded-lg transition-colors duration-200 text-center'>
+              <button onClick={() => { navigate('/auth'); setOpen(false); }} className='w-full py-3 text-base font-medium text-white bg-amber-600 hover:bg-amber-700 rounded-lg transition-colors duration-200 hover:pointer-cursor text-center'>
                 Sign Up
               </button>
             </div>
